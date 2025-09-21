@@ -1,25 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>PDF Tools</title>
-</head>
-<body>
-  <h2>Word to PDF</h2>
-  <input type="file" id="wordFile" />
-  <button onclick="convertWordToPDF()">Convert Word</button>
+// Word to PDF
+function convertWordToPDF() {
+  const fileInput = document.getElementById("wordFile");
+  if (!fileInput.files.length) {
+    alert("Please select a Word file first!");
+    return;
+  }
+  const file = fileInput.files[0];
+  alert("File selected: " + file.name + "\nConversion will work when API is integrated.");
+}
 
-  <h2>JPG to PDF</h2>
-  <input type="file" id="jpgFile" />
-  <button onclick="convertJPGToPDF()">Convert JPG</button>
+// JPG to PDF
+function convertJPGToPDF() {
+  const fileInput = document.getElementById("jpgFile");
+  if (!fileInput.files.length) {
+    alert("Please select a JPG file first!");
+    return;
+  }
+  const file = fileInput.files[0];
+  alert("File selected: " + file.name + "\nConversion will work when API is integrated.");
+}
 
-  <h2>Merge PDF</h2>
-  <button onclick="mergePDFs()">Merge PDFs</button>
+// Merge PDF
+function mergePDFs() {
+  const files = document.getElementById("mergeFiles").files;
+  if (!files.length) {
+    alert("Please select at least 2 PDF files to merge!");
+    return;
+  }
+  alert(files.length + " files selected for merging.\nMerge will work when API is integrated.");
+}
 
-  <h2>Split PDF</h2>
-  <button onclick="splitPDF()">Split PDF</button>
-
-  <!-- JavaScript link -->
-  <script src="script.js"></script>
-</body>
-</html>
+// Split PDF
+function splitPDF() {
+  const fileInput = document.getElementById("splitFile");
+  if (!fileInput.files.length) {
+    alert("Please select a PDF file to split!");
+    return;
+  }
+  const file = fileInput.files[0];
+  alert("File selected: " + file.name + "\nSplit will work when API is integrated.");
+}
