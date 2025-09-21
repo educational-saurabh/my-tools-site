@@ -1,0 +1,27 @@
+function convertWordToPDF() {
+  const fileInput = document.getElementById("wordFile");
+  if (!fileInput.files.length) {
+    alert("Please select a Word file first!");
+    return;
+  }
+  const file = fileInput.files[0];
+  alert("File selected: " + file.name + "\nConversion will work when API is integrated.");
+}
+
+function convertJPGToPDF() {
+  const fileInput = document.getElementById("jpgFile");
+  if (!fileInput.files.length) {
+    alert("Please select a JPG file first!");
+    return;
+  }
+  const file = fileInput.files[0];
+  alert("File selected: " + file.name + "\nConversion will work when API is integrated.");
+}
+
+function mergePDFs() {
+  alert("PDF merge will work when API or backend is integrated.");
+}
+
+function splitPDF() {
+  alert("PDF split will work when API or backend is integrated.");
+}
