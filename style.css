@@ -1,36 +1,29 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  margin: 30px;
+  margin: 50px;
   background-color: #f5f5f5;
 }
 
 h1 { color: #333; }
-
-.tool {
-  margin: 20px auto;
-  padding: 15px;
-  border: 1px solid #ccc;
-  width: 300px;
-  border-radius: 8px;
-  background-color: #fff;
-}
-
-.tool h2 {
-  color: #0073e6;
-}
+h2 { color: #444; margin-top: 30px; }
 
 input[type="file"] {
   margin: 10px 0;
 }
 
 button {
+  display: block;
+  margin: 10px auto 30px;
   padding: 10px 20px;
-  background-color: #0073e6;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 6px;
 }
 
-button:hover { background-color: #005bb5; }
+button:hover {
+  background-color: #005bb5;
+}
