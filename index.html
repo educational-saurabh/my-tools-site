@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>PDF Tools</title>
-</head>
-<body>
-  <h2>Word to PDF</h2>
-  <input type="file" id="wordFile" />
-  <button onclick="convertWordToPDF()">Convert Word</button>
+<h2>Merge PDF</h2>
+<input type="file" id="mergeFiles" multiple />
+<button onclick="mergePDFs()">Merge PDFs</button>
 
-  <h2>JPG to PDF</h2>
-  <input type="file" id="jpgFile" />
-  <button onclick="convertJPGToPDF()">Convert JPG</button>
+<h2>Split PDF</h2>
+<input type="file" id="splitFile" />
+<button onclick="splitPDF()">Split PDF</button>
+function mergePDFs() {
+  const files = document.getElementById("mergeFiles").files;
+  if (!files.length) {
+    alert("Please select PDF files first!");
+    return;
+  }
+  alert(files.length + " PDF(s) selected for merge. Conversion will work when API is integrated.");
+}
 
-  <h2>Merge PDF</h2>
-  <button onclick="mergePDFs()">Merge PDFs</button>
-
-  <h2>Split PDF</h2>
-  <button onclick="splitPDF()">Split PDF</button>
-
-  <!-- JavaScript link -->
-  <script src="script.js"></script>
-</body>
-</html>
+function splitPDF() {
+  const file = document.getElementById("splitFile").files[0];
+  if (!file) {
+    alert("Please select a PDF file first!");
+    return;
+  }
+  alert("File selected: " + file.name + "\nSplit will work when API is integrated.");
+}
