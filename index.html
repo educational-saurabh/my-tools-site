@@ -2,38 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MyPDF Tools</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 50px;
-      background-color: #f5f5f5;
-    }
-    h1 { color: #333; }
-    .tool-btn {
-      display: block;
-      margin: 20px auto;
-      padding: 15px 30px;
-      background-color: #0073e6;
-      color: white;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      width: 250px;
-    }
-    .tool-btn:hover { background-color: #005bb5; }
-  </style>
+  <title>Word → PDF</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>📂 MyPDF Tools</h1>
-  <p>Choose a tool below:</p>
-  
-  <a href="word-to-pdf.html" class="tool-btn">Word → PDF</a>
-  <a href="jpg-to-pdf.html" class="tool-btn">JPG → PDF</a>
-  <a href="merge-pdf.html" class="tool-btn">Merge PDF</a>
-  <a href="split-pdf.html" class="tool-btn">Split PDF</a>
+  <h1>Word → PDF</h1>
+  <input type="file" id="wordFile">
+  <button onclick="convertWordToPDF()">Convert</button>
+  <a id="downloadLink" style="display:none">Download PDF</a>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
