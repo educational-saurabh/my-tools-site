@@ -1,52 +1,31 @@
-/* Body styling */
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 50px;
-  background-color: #f5f5f5;
+// Word to PDF demo function
+function convertWordToPDF() {
+    const fileInput = document.getElementById("wordFile");
+    if (!fileInput.files.length) {
+        alert("Please select a Word file first!");
+        return;
+    }
+    const file = fileInput.files[0];
+    alert("File selected: " + file.name + "\nConversion will work when API is integrated.");
 }
 
-/* Heading */
-h1 {
-  color: #333;
+// JPG to PDF demo function
+function convertJPGToPDF() {
+    const fileInput = document.getElementById("jpgFile");
+    if (!fileInput.files.length) {
+        alert("Please select a JPG file first!");
+        return;
+    }
+    const file = fileInput.files[0];
+    alert("File selected: " + file.name + "\nConversion will work when API is integrated.");
 }
 
-/* Buttons for tools */
-.tool-btn {
-  display: block;
-  margin: 20px auto;
-  padding: 15px 30px;
-  background-color: #0073e6;
-  color: white;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  width: 250px;
+// Merge PDF demo function
+function mergePDFs() {
+    alert("PDF merge will work when API or backend is integrated.");
 }
 
-.tool-btn:hover {
-  background-color: #005bb5;
-}
-
-/* File input styling */
-input[type="file"] {
-  margin: 20px auto;
-  display: block;
-}
-
-/* Convert button styling */
-.convert-btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.convert-btn:hover {
-  background-color: #1e7e34;
+// Split PDF demo function
+function splitPDF() {
+    alert("PDF split will work when API or backend is integrated.");
 }
