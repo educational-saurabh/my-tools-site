@@ -7,35 +7,27 @@
 </head>
 <body>
   <h1>📂 MyPDF Tools</h1>
-  <p>Select a tool and a file to convert or process:</p>
+  <p>Choose a tool below:</p>
 
   <!-- Word to PDF -->
-  <div class="tool">
-    <h2>Word → PDF</h2>
-    <input type="file" id="wordFile" />
-    <button onclick="convertWordToPDF()">Convert Word</button>
-  </div>
+  <h2>Word → PDF</h2>
+  <input type="file" id="wordFile" />
+  <button onclick="convertWordToPDF()">Convert Word</button>
 
   <!-- JPG to PDF -->
-  <div class="tool">
-    <h2>JPG → PDF</h2>
-    <input type="file" id="jpgFile" />
-    <button onclick="convertJPGToPDF()">Convert JPG</button>
-  </div>
+  <h2>JPG → PDF</h2>
+  <input type="file" id="jpgFile" />
+  <button onclick="convertJPGToPDF()">Convert JPG</button>
 
   <!-- Merge PDF -->
-  <div class="tool">
-    <h2>Merge PDF</h2>
-    <input type="file" id="mergeFiles" multiple />
-    <button onclick="mergePDFs()">Merge PDFs</button>
-  </div>
+  <h2>Merge PDF</h2>
+  <input type="file" id="mergeFiles" multiple />
+  <button onclick="mergePDFs()">Merge PDFs</button>
 
   <!-- Split PDF -->
-  <div class="tool">
-    <h2>Split PDF</h2>
-    <input type="file" id="splitFile" />
-    <button onclick="splitPDF()">Split PDF</button>
-  </div>
+  <h2>Split PDF</h2>
+  <input type="file" id="splitFile" />
+  <button onclick="splitPDF()">Split PDF</button>
 
   <script src="js/script.js"></script>
 </body>
