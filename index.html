@@ -7,27 +7,24 @@
 </head>
 <body>
   <h1>📂 MyPDF Tools</h1>
-  <p>Choose a tool below:</p>
 
-  <!-- Word to PDF -->
   <h2>Word → PDF</h2>
-  <input type="file" id="wordFile" />
+  <input type="file" id="wordFile">
   <button onclick="convertWordToPDF()">Convert Word</button>
 
-  <!-- JPG to PDF -->
   <h2>JPG → PDF</h2>
-  <input type="file" id="jpgFile" />
+  <input type="file" id="jpgFile">
   <button onclick="convertJPGToPDF()">Convert JPG</button>
 
-  <!-- Merge PDF -->
   <h2>Merge PDF</h2>
-  <input type="file" id="mergeFiles" multiple />
+  <input type="file" id="mergeFiles" multiple>
   <button onclick="mergePDFs()">Merge PDFs</button>
 
-  <!-- Split PDF -->
   <h2>Split PDF</h2>
-  <input type="file" id="splitFile" />
+  <input type="file" id="splitFile">
   <button onclick="splitPDF()">Split PDF</button>
+
+  <a id="downloadLink" href="#" download style="display:none;">Download Converted File</a>
 
   <script src="js/script.js"></script>
 </body>
