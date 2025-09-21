@@ -1,54 +1,98 @@
-// Replace this with your ConvertAPI Production Token
-const CONVERT_API_TOKEN = "Zx2kkRJr55poIYavewstnIWxtfmrxIbb";
+const TOKEN = "Zx2kkRJr55poIYavewstnIWxtfmrxIbb"; // Production Token
 
-// Word to PDF
+// Word → PDF
 function convertWordToPDF() {
   const fileInput = document.getElementById("wordFile");
-  if (!fileInput.files.length) { alert("Please select a Word file!"); return; }
+  if (!fileInput.files.length) return alert("Please select a Word file first!");
+
   const file = fileInput.files[0];
-  sendToConvertAPI(file, "docx", "pdf");
-}
-
-// JPG to PDF
-function convertJPGToPDF() {
-  const fileInput = document.getElementById("jpgFile");
-  if (!fileInput.files.length) { alert("Please select a JPG file!"); return; }
-  const file = fileInput.files[0];
-  sendToConvertAPI(file, "jpg", "pdf");
-}
-
-// Merge PDFs
-function mergePDFs() {
-  const files = document.getElementById("mergeFiles").files;
-  if (!files.length) { alert("Select PDF files to merge!"); return; }
-  alert("Merge API integration pending. Multiple files will be sent to API.");
-}
-
-// Split PDF
-function splitPDF() {
-  const fileInput = document.getElementById("splitFile");
-  if (!fileInput.files.length) { alert("Select PDF to split!"); return; }
-  alert("Split API integration pending. File will be sent to API.");
-}
-
-// Generic API call function
-function sendToConvertAPI(file, fromFormat, toFormat) {
   const formData = new FormData();
+  formData.append("Secret", TOKEN);
   formData.append("File", file);
-  formData.append("Secret", CONVERT_API_TOKEN);
 
-  fetch(`https://v2.convertapi.com/${fromFormat}/to/${toFormat}`, {
+  fetch("https://v2.convertapi.com/convert/docx/to/pdf", {
     method: "POST",
     body: formData
   })
   .then(res => res.json())
   .then(data => {
-    if (data.Files && data.Files[0].Url) {
-      alert("Conversion ready! Download from: " + data.Files[0].Url);
-      window.open(data.Files[0].Url, "_blank");
-    } else {
-      alert("Conversion failed. Check your API token or file format.");
-    }
+    const link = document.getElementById("downloadLink");
+    link.href = data.Files[0].Url;
+    link.style.display = "inline-block";
+    link.textContent = "Download PDF";
   })
-  .catch(err => alert("Error: " + err));
+  .catch(err => alert("Conversion failed: " + err));
+}
+
+// JPG → PDF
+function convertJPGToPDF() {
+  const fileInput = document.getElementById("jpgFile");
+  if (!fileInput.files.length) return alert("Please select a JPG file first!");
+
+  const file = fileInput.files[0];
+  const formData = new FormData();
+  formData.append("Secret", TOKEN);
+  formData.append("File", file);
+
+  fetch("https://v2.convertapi.com/convert/jpg/to/pdf", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    const link = document.getElementById("downloadLink");
+    link.href = data.Files[0].Url;
+    link.style.display = "inline-block";
+    link.textContent = "Download PDF";
+  })
+  .catch(err => alert("Conversion failed: " + err));
+}
+
+// Merge PDFs
+function mergePDFs() {
+  const filesInput = document.getElementById("mergeFiles");
+  if (!filesInput.files.length) return alert("Please select PDF files to merge!");
+
+  const formData = new FormData();
+  formData.append("Secret", TOKEN);
+  for (let i = 0; i < filesInput.files.length; i++) {
+    formData.append("Files[" + i + "]", filesInput.files[i]);
+  }
+
+  fetch("https://v2.convertapi.com/convert/pdf/merge", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    const link = document.getElementById("downloadLink");
+    link.href = data.Files[0].Url;
+    link.style.display = "inline-block";
+    link.textContent = "Download Merged PDF";
+  })
+  .catch(err => alert("Merge failed: " + err));
+}
+
+// Split PDF
+function splitPDF() {
+  const fileInput = document.getElementById("splitFile");
+  if (!fileInput.files.length) return alert("Please select a PDF to split!");
+
+  const file = fileInput.files[0];
+  const formData = new FormData();
+  formData.append("Secret", TOKEN);
+  formData.append("File", file);
+
+  fetch("https://v2.convertapi.com/convert/pdf/split", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    const link = document.getElementById("downloadLink");
+    link.href = data.Files[0].Url;
+    link.style.display = "inline-block";
+    link.textContent = "Download Split PDF";
+  })
+  .catch(err => alert("Split failed: " + err));
 }
