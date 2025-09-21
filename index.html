@@ -1,66 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Word → PDF</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <h1>Word → PDF</h1>
-  <input type="file" id="wordFile">
-  <button onclick="convertWordToPDF()">Convert</button>
-  <a id="downloadLink" style="display:none">Download PDF</a>
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+  background-color: #f5f5f5;
+}
 
-  <script src="js/script.js"></script>
-</body>
-</html>
+/* Heading */
+h1 {
+  color: #333;
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>JPG → PDF</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <h1>JPG → PDF</h1>
-  <input type="file" id="jpgFile">
-  <button onclick="convertJPGToPDF()">Convert</button>
-  <a id="downloadLink" style="display:none">Download PDF</a>
+/* Buttons for tools */
+.tool-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 15px 30px;
+  background-color: #0073e6;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 250px;
+}
 
-  <script src="js/script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Merge PDF</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <h1>Merge PDF</h1>
-  <input type="file" id="mergeFiles" multiple>
-  <button onclick="mergePDFs()">Merge</button>
-  <a id="downloadLink" style="display:none">Download Merged PDF</a>
- <script src="js/script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Split PDF</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <h1>Split PDF</h1>
-  <input type="file" id="splitFile">
-  <button onclick="splitPDF()">Split</button>
-  <a id="downloadLink" style="display:none">Download Split PDF</a>
+.tool-btn:hover {
+  background-color: #005bb5;
+}
 
-  <script src="js/script.js"></script>
-</body>
-</html>
+/* File input styling */
+input[type="file"] {
+  margin: 20px auto;
+  display: block;
+}
 
+/* Convert button styling */
+.convert-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
+.convert-btn:hover {
+  background-color: #1e7e34;
+}
